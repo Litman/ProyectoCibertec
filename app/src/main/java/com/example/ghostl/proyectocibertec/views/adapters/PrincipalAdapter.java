@@ -17,13 +17,8 @@ import java.util.List;
 public class PrincipalAdapter extends RecyclerView.Adapter<ItemsViewHolder> implements View.OnClickListener   {
 
     private List<PrincipalData> mDataSource = new ArrayList();
-    private Context context;
 
     public PrincipalAdapter(List<PrincipalData> mDataSource) {
-        this.mDataSource = mDataSource;
-    }
-
-    public void setDataSource(List<PrincipalData> mDataSource) {
         this.mDataSource = mDataSource;
         notifyDataSetChanged();
     }
@@ -41,9 +36,7 @@ public class PrincipalAdapter extends RecyclerView.Adapter<ItemsViewHolder> impl
 
         PrincipalData newItem = mDataSource.get(position);
 
-
         holder.bind(newItem);
-
 
     }
 

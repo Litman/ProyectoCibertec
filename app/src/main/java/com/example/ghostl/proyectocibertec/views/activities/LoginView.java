@@ -22,4 +22,6 @@ public interface LoginView {
 
     void showErrorUsernameNotExist();
 
+    void showDialogRecoverPwd();
+
 }

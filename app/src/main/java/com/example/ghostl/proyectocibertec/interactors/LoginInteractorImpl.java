@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Handler;
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.example.ghostl.proyectocibertec.utils.Constants;
 import com.example.ghostl.proyectocibertec.utils.Util;
@@ -35,9 +36,10 @@ public class LoginInteractorImpl implements  LoginInteractor {
     @Override
     public void validateUserExist(boolean optionSelected, Context context, OnMyLoginFinishedListener listener) {
         if (optionSelected){
+            Log.d("Data", "/"+ optionSelected);
             SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.PREF_NAME, Context.MODE_PRIVATE);
             String response = sharedPreferences.getString(Constants.USER_NAME_KEY, "");
-
+            Log.d("Preferemces Data", "/"+ response);
             if (response.trim().length() == 0 || response == null || response.isEmpty() || response.equals("null")) {
 
                 listener.onUsernameExist();

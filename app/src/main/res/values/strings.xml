@@ -15,5 +15,6 @@
     <string name="menu_configuration">Configuración</string>
     <string name="menu_exit">Salir</string>
     <string name="empty_text">\"\"</string>
+    <string name="label_send">Enviar</string>
 
 </resources>

@@ -64,7 +64,7 @@
                 android:hint="PASSWORD"
                 android:text=""
                 android:maxLength="8"
-                android:inputType="textPersonName"
+                android:inputType="textPassword"
 
                  />
 

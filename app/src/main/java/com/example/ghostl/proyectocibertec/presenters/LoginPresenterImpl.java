@@ -35,6 +35,20 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnMyL
     }
 
     @Override
+    public void showDialog() {
+        if(mLoginview != null){
+            mLoginview.showDialogRecoverPwd();
+        }
+    }
+
+    @Override
+    public void showPassword() {
+        if(mLoginview != null){
+            mLoginview.showPassword();
+        }
+    }
+
+    @Override
     public void onUsernameError() {
         if(mLoginview != null){
             mLoginview.setUsernameError();
@@ -47,7 +61,6 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnMyL
         if(mLoginview != null){
             mLoginview.showErrorUsernameNotExist();
         }
-
     }
 
     @Override
@@ -68,7 +81,7 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnMyL
     @Override
     public void onSetUsername(String response) {
         if(mLoginview != null){
-            mLoginview.setUsernameError();
+            mLoginview.setUserName(response);
             mLoginview.disabledUserText();
         }
     }

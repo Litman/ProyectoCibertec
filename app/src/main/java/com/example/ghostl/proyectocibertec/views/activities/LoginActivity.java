@@ -1,5 +1,7 @@
 package com.example.ghostl.proyectocibertec.views.activities;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,6 +18,7 @@ import android.widget.RelativeLayout;
 import com.example.ghostl.proyectocibertec.R;
 import com.example.ghostl.proyectocibertec.presenters.LoginPresenter;
 import com.example.ghostl.proyectocibertec.presenters.LoginPresenterImpl;
+import com.example.ghostl.proyectocibertec.views.dialogs.DialogForgotPassword;
 
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener{
 
@@ -26,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     RelativeLayout rProgresBar;
     SwitchCompat swRememberUser;
     LoginPresenter presenter;
-
+    DialogForgotPassword dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +85,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     public void navigateToHome() {
 
         startActivity(new Intent(this, HomeActivity.class));
+        finish();
     }
 
     @Override
@@ -95,23 +99,30 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
     @Override
     public void enabledUserText() {
-
-    }
-
-    @Override
-    public void disabledUserText() {
         etUser.setEnabled(true);
         etUser.setText("");
     }
 
     @Override
+    public void disabledUserText() {
+
+    }
+
+    @Override
     public void setUserName(String user) {
         etUser.setEnabled(false);
+        etUser.setText(user);
     }
 
     @Override
     public void showErrorUsernameNotExist() {
         etUser.setError(getString(R.string.username_not_exist));
+    }
+
+    @Override
+    public void showDialogRecoverPwd() {
+        dialog = new DialogForgotPassword();
+        dialog.show(getFragmentManager(), "");
     }
 
     @Override
@@ -128,7 +139,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
 
                 break;
             case R.id.img_showPass:
-                showPassword();
+                //showPassword();
+                presenter.showPassword();
+                break;
+
+            case R.id.tForgotPassword:
+                presenter.showDialog();
                 break;
 
         }

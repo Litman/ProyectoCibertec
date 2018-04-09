@@ -8,4 +8,8 @@ public interface LoginPresenter {
     void validateUserExist(boolean optionSelect, Context context);
 
     void onDestroy();
+
+    void showDialog();
+
+    void showPassword();
 }
