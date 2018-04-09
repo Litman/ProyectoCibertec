@@ -3,4 +3,27 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
+    <color name="white">@android:color/white</color>
+    <color name="white80">#80FFFFFF</color>
+    <color name="black">#090808</color>
+    <color name="gray">#AEACAC</color>
+    <color name="gray2">#B8B6B6</color>
+    <color name="background_dialog">#66000000</color>
+    <color name="yellow">#EBDF2E</color>
+    <color name="colorVerdeOficialEmpresa">#007C31</color>
+    <color name="colorVerdeOficialEmpresaAl75PorCiento">#409d64</color>
+
+
+    <color name="grey_50">#FAFAFA</color>
+    <color name="grey_100">#F5F5F5</color>
+    <color name="grey_200">#EEEEEE</color>
+    <color name="grey_300">#E0E0E0</color>
+    <color name="grey_400">#BDBDBD</color>
+    <color name="grey_500">#9E9E9E</color>
+    <color name="grey_600">#757575</color>
+    <color name="grey_700">#616161</color>
+    <color name="grey_800">#424242</color>
+    <color name="grey_900">#212121</color>
 </resources>

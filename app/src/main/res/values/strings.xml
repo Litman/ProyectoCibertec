@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">ProyectoCibertec</string>
+
+    <string name="username_error">Usuario no puede ser vacio</string>
+    <string name="password_error">Password no puede ser vacio</string>
+
+    <string name="username_not_exist">No existe un Usuario registrado</string>
+    <string name="remember_user">Recordar Usuario</string>
+
+    <string name="menu_principal">Principal</string>
+    <string name="menu_news">Noticias</string>
+    <string name="menu_benefits">Beneficios</string>
+    <string name="menu_events">Eventos</string>
+    <string name="menu_vacations">Vacaciones</string>
+    <string name="menu_configuration">Configuración</string>
+    <string name="menu_exit">Salir</string>
+    <string name="empty_text">\"\"</string>
+
 </resources>

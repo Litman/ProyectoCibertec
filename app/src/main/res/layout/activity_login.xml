@@ -1,9 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.ghostl.proyectocibertec.view.activities.LoginActivity">
+    tools:context="com.example.ghostl.proyectocibertec.views.activities.LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
+
+        <RelativeLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/eUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLength="8"
+
+                android:ems="10"
+                android:gravity="center"
+                android:text=""
+                android:hint="USUARIO"
+                android:inputType="textPersonName"
+
+                 />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/linearLayout12"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_below="@+id/linearLayout2">
+
+
+            <android.support.v7.widget.AppCompatEditText
+                android:id="@+id/ePassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="PASSWORD"
+                android:text=""
+                android:maxLength="8"
+                android:inputType="textPersonName"
+
+                 />
+
+            <ImageView
+                android:id="@+id/img_showPass"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignEnd="@+id/ePassword"
+                android:src="@drawable/ic_eye"/>
+
+
+        </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+
+                android:layout_marginTop="199dp"
+
+                android:text="Olvide mi contraseña"
+                android:layout_below="@id/bLogin"
+                android:textColor="@color/colorVerdeOficialEmpresa"
+                android:textStyle="bold" />
+
+        <android.support.v7.widget.SwitchCompat
+            android:id="@+id/swRememberUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="right"
+            android:layout_marginTop="113dp"
+            android:text="@string/remember_user"
+            android:textColor="@color/colorVerdeOficialEmpresa" />
+
+        <Button
+            android:id="@+id/bLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/button_oval_style"
+            android:elevation="10dp"
+            android:text="Entrar"
+            android:textColor="@color/white"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:layout_below="@id/swRememberUser"/>
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rRelativeProgress"
+        android:visibility="gone"
+        android:background="@color/background_dialog">
+
+        <ProgressBar
+            android:id="@+id/pProgressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+
+</RelativeLayout>
+
+
