@@ -4,5 +4,6 @@
     <dimen name="view_general_item_corner_radius">8dp</dimen>
     <dimen name="view_general_item_content_padding">2dp</dimen>
     <dimen name="view_general_elevation">10dp</dimen>
+    <dimen name="activity_title">20sp</dimen>
 
 </resources>

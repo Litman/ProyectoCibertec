@@ -18,7 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".views.activities.HomeActivity"></activity>
+        <activity android:name=".views.activities.HomeActivity" />
+        <activity android:name=".views.activities.UpdateProfileActivity" />
+        <activity android:name=".views.activities.ChangePasswordActivity"></activity>
     </application>
 
 </manifest>

@@ -16,5 +16,6 @@
     <string name="menu_exit">Salir</string>
     <string name="empty_text">\"\"</string>
     <string name="label_send">Enviar</string>
+    <string name="title_santander">Proyecto Cibertec</string>
 
 </resources>
