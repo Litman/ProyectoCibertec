@@ -49,5 +49,8 @@ public class PrincipalAdapter extends RecyclerView.Adapter<ItemsViewHolder> impl
     public void onClick(View view) {
 
     }
+
+    public void clearList() {
+    }
 }
 

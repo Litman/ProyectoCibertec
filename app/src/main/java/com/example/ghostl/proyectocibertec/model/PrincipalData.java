@@ -5,11 +5,21 @@ public class PrincipalData {
     private String title;
     private String description;
     private String urlImage;
+    private int typeData;
 
-    public PrincipalData(String title, String description, String urlImage) {
+    public PrincipalData(String title, String description, String urlImage, int typeData) {
         this.title = title;
         this.description = description;
         this.urlImage = urlImage;
+        this.typeData = typeData;
+    }
+
+    public int getTypeData() {
+        return typeData;
+    }
+
+    public void setTypeData(int typeData) {
+        this.typeData = typeData;
     }
 
     public String getTitle() {
@@ -42,6 +52,7 @@ public class PrincipalData {
                 "title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", urlImage='" + urlImage + '\'' +
+                ", typeData=" + typeData +
                 '}';
     }
 }

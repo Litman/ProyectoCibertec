@@ -5,6 +5,8 @@ import android.content.SharedPreferences;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.example.ghostl.proyectocibertec.model.PrincipalData;
+
 public class Util {
 
     public static void saveSharedPreferenceUser(String username, Context context) {
@@ -19,6 +21,10 @@ public class Util {
 
     public final static boolean isValidEmail(CharSequence target) {
         return !TextUtils.isEmpty(target) && android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
+    }
+
+    public static PrincipalData addHead(){
+        return new PrincipalData("", "", "", 1);
     }
 
 }
