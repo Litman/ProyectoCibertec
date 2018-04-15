@@ -17,5 +17,8 @@
     <string name="empty_text">\"\"</string>
     <string name="label_send">Enviar</string>
     <string name="title_santander">Proyecto Cibertec</string>
+    <string name="name_user">Usuario</string>
+    <string name="email_user">Correo Electronico</string>
+    <string name="folder_name">PHOTO_IMG</string>
 
 </resources>

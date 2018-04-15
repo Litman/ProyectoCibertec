@@ -62,7 +62,7 @@
                 android:ems="10"
                 android:gravity="center"
                 android:hint="PASSWORD"
-                android:text=""
+                android:text="test"
                 android:maxLength="8"
                 android:inputType="textPassword"
 
