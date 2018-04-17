@@ -174,8 +174,8 @@ public class UpdateProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mButtonCancel = findViewById(R.id.bConfirm);
-        mButtonOk = findViewById(R.id.bCancel);
+        mButtonCancel = findViewById(R.id.bCancel);
+        mButtonOk = findViewById(R.id.bConfirm);
         permissionStatus = getSharedPreferences("permissionStatus", MODE_PRIVATE);
     }
 
