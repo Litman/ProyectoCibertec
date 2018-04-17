@@ -2,10 +2,13 @@ package com.example.ghostl.proyectocibertec.views.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.ghostl.proyectocibertec.R;
 
 public class EventActivity extends AppCompatActivity {
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

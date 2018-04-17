@@ -37,7 +37,7 @@ public class Util {
     }
 
     public static PrincipalData addHead(){
-        return new PrincipalData("", "", "", 1);
+        return new PrincipalData("", "", "", 1, 0, null, null, null);
     }
 
     public static boolean checkPermission(final UpdateProfileActivity updateProfileActivity, SharedPreferences permissionStatus,boolean sentToSettings) {

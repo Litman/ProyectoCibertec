@@ -4,11 +4,14 @@ package com.example.ghostl.proyectocibertec.views.ViewHolders;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.example.ghostl.proyectocibertec.R;
 import com.example.ghostl.proyectocibertec.model.PrincipalData;
 import com.example.ghostl.proyectocibertec.utils.Constants;
@@ -46,6 +49,15 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
         tvDescription.setText(newItem.getDescription());
 
+        Log.d("Image", "//"+ item.getUrlImage());
+        if(! (item.getUrlImage() == null) ) {
+            Glide.with(itemView.getContext())
+                    .load(item.getUrlImage())
+                    .thumbnail(0.1f)
+                    .into(imgItem);
+
+        }
+
         if(item.getTypeData() == 3){
             PrincipalData item = (PrincipalData) itemView.getTag();
 
@@ -56,6 +68,8 @@ public class ItemsViewHolder extends RecyclerView.ViewHolder {
 
 
         }else{
+            mLocation.setText(item.getLocation());
+            mDate.setText("");
             PrincipalData item = (PrincipalData) itemView.getTag();
 
             intent = new Intent(itemView.getContext(), EventActivity.class);

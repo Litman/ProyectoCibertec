@@ -20,5 +20,12 @@
     <string name="name_user">Usuario</string>
     <string name="email_user">Correo Electronico</string>
     <string name="folder_name">PHOTO_IMG</string>
+    <string name="label_information_aditional">No hay información adicional</string>
+    <string name="label_last_password">Contraseña anterior</string>
+    <string name="label_dni">DNI</string>
+    <string name="label_new_password">Contraseña nueva</string>
+    <string name="label_repeat_password">Confirmación de contraseña</string>
+    <string name="label_change_password">Cambiar contraseña</string>
+    <string name="label_cancel">Cancelar</string>
 
 </resources>

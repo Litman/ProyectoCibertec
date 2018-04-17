@@ -16,7 +16,6 @@ import android.widget.ProgressBar;
 import com.example.ghostl.proyectocibertec.R;
 import com.example.ghostl.proyectocibertec.model.PrincipalData;
 import com.example.ghostl.proyectocibertec.utils.Constants;
-import com.example.ghostl.proyectocibertec.utils.Util;
 import com.example.ghostl.proyectocibertec.views.adapters.PrincipalAdapter;
 
 import java.util.ArrayList;
@@ -71,7 +70,7 @@ public class PrincipalFragment extends Fragment {
 
         mProgressBar.setVisibility(View.VISIBLE);
 
-        itemList.add(Util.addHead());
+//        itemList.add(Util.addHead());
 
         if(Constants.mock){
             mProgressBar.setVisibility(View.GONE);
@@ -87,14 +86,16 @@ public class PrincipalFragment extends Fragment {
     }
 
     private void addDataMock(List<PrincipalData> itemList) {
-        PrincipalData principalData1 = new PrincipalData("Noticia", "test de notcia" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_375637.jpg", 3);
-        PrincipalData principalData2 = new PrincipalData("Noticia Principal", "test de notcia 56" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 3);
-        PrincipalData principalData3 = new PrincipalData("Noticia Principal", "test de notcia 56" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 3);
+        PrincipalData principalData1 = new PrincipalData("Noticia", "test de notcia" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_375637.jpg", 3, 0,null, null, null);
+        PrincipalData principalData2 = new PrincipalData("Evento Principal", "test evento 56" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 4, 12, "-12.088212792096702", "-77.00347423553467","Av. Javier Prado 225");
+        PrincipalData principalData3 = new PrincipalData("Noticia Principal", "test de notcia 56" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 3, 0, null, null, null );
+        PrincipalData principalData4 = new PrincipalData("Evento Runner", "Lima Corre" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 4, 13, "-12.07207553860705", "-77.00278700927629","Av. Nicolas Arriola 1225");
+        PrincipalData principalData5 = new PrincipalData("Noticia Principal", "test de notcia 56" , "http://e.rpp-noticias.io/medium/2018/03/05/portada_204620.jpg", 3, 0, null, null, null);
 
         itemList.add(principalData1);
         itemList.add(principalData2);
         itemList.add(principalData3);
-        itemList.add(principalData1);
-        itemList.add(principalData2);
+        itemList.add(principalData4);
+        itemList.add(principalData5);
     }
 }
