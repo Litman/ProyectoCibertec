@@ -1,5 +1,6 @@
 package com.example.ghostl.proyectocibertec.views.fragments;
 
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CoordinatorLayout;
@@ -30,6 +31,7 @@ public class PrincipalFragment extends Fragment {
     LinearLayoutManager mLinearLayoutManager;
     PrincipalAdapter mPrincipalAdapter;
     CoordinatorLayout mCoordinatorLayout;
+    IntentFilter intentFilter;
 
 
     public static PrincipalFragment newInstance(){
@@ -54,6 +56,9 @@ public class PrincipalFragment extends Fragment {
         mCoordinatorLayout = view.findViewById(R.id.coordinatorLayout);
         mProgressBar = view.findViewById(R.id.pProgressBar);
         mRecyclerView = view.findViewById(R.id.rRecycleView);
+
+        //Create Receiver
+
 
         loadData();
 

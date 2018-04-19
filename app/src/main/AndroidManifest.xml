@@ -38,6 +38,15 @@
                 android:resource="@xml/provider_paths"/>
 
         </provider>
+
+        <service android:name=".services.ServiceUpdateData"></service>
+
+        <receiver android:name=".services.ConnectivityChangeReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>

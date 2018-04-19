@@ -8,10 +8,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.Settings;
 import android.support.v4.app.ActivityCompat;
+import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -21,6 +24,10 @@ import com.example.ghostl.proyectocibertec.model.PrincipalData;
 import com.example.ghostl.proyectocibertec.views.activities.UpdateProfileActivity;
 
 public class Util {
+
+    static final int TYPE_WIFI = 1;
+    static final int TYPE_MOBILE = 2;
+    static final int TYPE_NOT_CONNECTED = 0;
 
     public static void saveSharedPreferenceUser(String username, Context context) {
         Log.d("SavePreference", username);
@@ -84,4 +91,64 @@ public class Util {
         }
 
     }
+
+    public static String getConnectivityStatusString(Context context){
+        String status = null;
+        int connection = getConnectivityStatus(context);
+
+        if(connection == TYPE_WIFI){
+            status = Constants.CONNECT_TO_WIFI;
+        }else if(connection == TYPE_MOBILE){
+            Log.d("TYPE_MOBILE", ":"+Constants.CONNECT_TO_MOBILE);
+            status = getNetworkClass(context);
+        }else if(connection == TYPE_NOT_CONNECTED){
+            status = Constants.NOT_CONNECTED;
+        }
+        return status;
+    }
+
+    private static String getNetworkClass(Context context) {
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = connectivityManager.getActiveNetworkInfo();
+        if(info == null || !info.isConnected()){
+            return "-";
+        }
+        if(info.getType() == ConnectivityManager.TYPE_WIFI){
+            return Constants.CONNECT_TO_WIFI;
+        }
+        if(info.getType() == ConnectivityManager.TYPE_MOBILE){
+            int networkType = info.getSubtype();
+            switch (networkType){
+                case TelephonyManager.NETWORK_TYPE_HSDPA:
+                    return "3G";
+
+                case TelephonyManager.NETWORK_TYPE_LTE:
+                    return "4G";
+                default:
+                    return "UNKNOWN";
+            }
+
+        }
+        return "UNKNOWN";
+    }
+
+
+    public static int getConnectivityStatus(Context context){
+
+        ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activityNetwork = connectivityManager.getActiveNetworkInfo();
+
+        if(activityNetwork != null){
+            if (activityNetwork.getType()  == ConnectivityManager.TYPE_WIFI){
+                return TYPE_WIFI;
+            }
+
+            if(activityNetwork.getType() == ConnectivityManager.TYPE_MOBILE){
+                return TYPE_MOBILE;
+            }
+        }
+        return TYPE_NOT_CONNECTED;
+    }
+
 }
