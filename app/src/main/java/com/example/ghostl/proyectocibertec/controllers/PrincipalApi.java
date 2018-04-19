@@ -1,15 +1,14 @@
 package com.example.ghostl.proyectocibertec.controllers;
 
-import com.example.ghostl.proyectocibertec.model.PrincipalData;
 
+import com.example.ghostl.proyectocibertec.model.UserData;
 
-
+import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
-import rx.Observable;
 
 public interface PrincipalApi {
 
-    @GET("name/{name}")
-    Observable<PrincipalData> getDataCountry(@Path("name") String name);
+    @GET("posts/{id}")
+    Call<UserData> getDataCountry(@Path("id") int id);
 }

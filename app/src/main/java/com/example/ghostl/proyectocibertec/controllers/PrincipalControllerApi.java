@@ -1,5 +1,7 @@
 package com.example.ghostl.proyectocibertec.controllers;
 
+import android.util.Log;
+
 import com.example.ghostl.proyectocibertec.utils.ConnectionValues;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -14,31 +16,18 @@ import rx.schedulers.Schedulers;
 
 public class PrincipalControllerApi {
 
-    private PrincipalApi principalApi;
-    LoadViewInterface loadViewInterface;
 
-    public PrincipalControllerApi(){
+    public static Retrofit getClient(){
         OkHttpClient.Builder client = new OkHttpClient.Builder();
 
         Gson gsonBuilder = new GsonBuilder().setLenient().create();
 
+        Log.d("Retrofit url: ","//:"+ConnectionValues.END_POIN_GENERAL);
         Retrofit retrofit = new Retrofit.Builder().baseUrl(ConnectionValues.END_POIN_GENERAL)
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create(gsonBuilder))
                 .client(client.build()).build();
-        principalApi = retrofit.create(PrincipalApi.class);
-    }
-
-    public void onViewInit(LoadViewInterface view){
-        loadViewInterface = view;
-    }
-
-    public void loadCountry(String name){
-        principalApi.getDataCountry(name)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
-
+        return retrofit;
     }
 
 }
