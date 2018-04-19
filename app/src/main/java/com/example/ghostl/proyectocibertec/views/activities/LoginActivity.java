@@ -19,6 +19,7 @@ import com.example.ghostl.proyectocibertec.R;
 import com.example.ghostl.proyectocibertec.presenters.LoginPresenter;
 import com.example.ghostl.proyectocibertec.presenters.LoginPresenterImpl;
 import com.example.ghostl.proyectocibertec.views.dialogs.DialogForgotPassword;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginActivity extends AppCompatActivity implements LoginView, View.OnClickListener{
 
@@ -56,8 +57,10 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 Log.d("Main", "//" + b);
                 presenter.validateUserExist(b, getApplicationContext());
+
             }
         });
+        presenter.showRefreshTokenFCM();
     }
 
     @Override
@@ -123,6 +126,12 @@ public class LoginActivity extends AppCompatActivity implements LoginView, View.
     public void showDialogRecoverPwd() {
         dialog = new DialogForgotPassword();
         dialog.show(getFragmentManager(), "");
+    }
+
+    @Override
+    public void showRefreshTokenFCM() {
+        String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d("Token Firebase", "" + refreshedToken);
     }
 
     @Override

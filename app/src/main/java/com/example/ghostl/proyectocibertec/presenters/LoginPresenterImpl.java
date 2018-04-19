@@ -1,10 +1,12 @@
 package com.example.ghostl.proyectocibertec.presenters;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.ghostl.proyectocibertec.interactors.LoginInteractor;
 import com.example.ghostl.proyectocibertec.interactors.LoginInteractorImpl;
 import com.example.ghostl.proyectocibertec.views.activities.LoginView;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnMyLoginFinishedListener {
     LoginView mLoginview;
@@ -45,6 +47,13 @@ public class LoginPresenterImpl implements LoginPresenter, LoginInteractor.OnMyL
     public void showPassword() {
         if(mLoginview != null){
             mLoginview.showPassword();
+        }
+    }
+
+    @Override
+    public void showRefreshTokenFCM() {
+        if(mLoginview != null){
+            mLoginview.showRefreshTokenFCM();
         }
     }
 

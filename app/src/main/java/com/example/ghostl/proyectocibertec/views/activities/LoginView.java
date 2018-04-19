@@ -24,4 +24,6 @@ public interface LoginView {
 
     void showDialogRecoverPwd();
 
+    void showRefreshTokenFCM();
+
 }

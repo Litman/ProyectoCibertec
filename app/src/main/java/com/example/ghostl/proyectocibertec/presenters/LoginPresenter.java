@@ -12,4 +12,6 @@ public interface LoginPresenter {
     void showDialog();
 
     void showPassword();
+
+    void showRefreshTokenFCM();
 }

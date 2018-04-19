@@ -49,8 +49,14 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
 
     //Map
-    implementation 'com.google.android.gms:play-services-maps:11.8.0'
+    implementation 'com.google.android.gms:play-services-maps:11.0.4'
 
     //ProgressLoading custom
     compile 'com.victor:lib:1.0.4'
+
+    implementation 'com.google.firebase:firebase-messaging:11.0.4'
+    implementation 'com.google.firebase:firebase-core:11.0.4'
+
 }
+
+apply plugin: 'com.google.gms.google-services'
